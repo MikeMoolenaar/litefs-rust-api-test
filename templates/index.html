@@ -1,0 +1,19 @@
+<style>
+/* Forced dark mode lol */
+body {
+  background-color: black;
+  color: white;
+}
+</style>
+
+<h1>Hi</h1>
+<p>Here are the users:</p>
+<ul>
+  {% for user in users %}
+    <li>
+      {{ user.email }} - {{ user.name }} has hair color {{ user.hair_color }}
+    </li>
+  {% endfor %}
+</ul>
+<br>
+<p>Query took {{elapsed}} </p>

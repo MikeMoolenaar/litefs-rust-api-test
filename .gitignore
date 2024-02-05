@@ -1,0 +1,7 @@
+/target
+sqlite.db*
+**/node_modules
+.idea
+.env.prod
+.sqlx
+
