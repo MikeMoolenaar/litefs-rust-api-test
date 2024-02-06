@@ -29,6 +29,8 @@ ENV DATABASE_URL="sqlite:///litefs/db"
 
 COPY --from=builder /app/target/x86_64-unknown-linux-musl/release/litefs-rust-api-test /usr/local/bin/litefs-rust-api-test
 COPY --from=builder /app/templates /app/templates
+# TODO: Should use a test DB here lol
+COPY --from=builder /app/sqlite.db /app/app.db
 COPY --from=builder /app/migrations /app/migrations
 COPY --from=builder /app/litefs.yml /app/litefs.yml
 
