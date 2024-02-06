@@ -83,9 +83,9 @@ async fn main() {
         app = app.layer(LiveReloadLayer::new().reload_interval(Duration::from_millis(100)))
     }
 
-    println!("Server is running at http://localhost:8080");
+    println!("Server is running at http://localhost:8081");
 
-    let listener = tokio::net::TcpListener::bind("0.0.0.0:8080").await.unwrap();
+    let listener = tokio::net::TcpListener::bind("0.0.0.0:8081").await.unwrap();
     axum::serve(
         listener,
         app.into_make_service_with_connect_info::<SocketAddr>(),

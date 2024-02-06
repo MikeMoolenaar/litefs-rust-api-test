@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for litefs-rust-api-test-cool-haze-2461 on 2024-02-05T20:47:09+01:00
+# fly.toml app configuration file generated for litefs-rust-api-test on 2024-02-06T19:46:52+01:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'litefs-rust-api-test-cool-haze-2461'
+app = 'litefs-rust-api-test'
 primary_region = 'ams'
 kill_signal = 'SIGINT'
 kill_timeout = '5s'
@@ -11,10 +11,14 @@ kill_timeout = '5s'
 [build]
 
 [env]
-  PORT = '8080'
+  PORT = '8081'
+
+[[mounts]]
+  source = 'litefs'
+  destination = '/var/lib/litefs'
 
 [http_service]
-  internal_port = 8080
+  internal_port = 8081
   force_https = true
   auto_stop_machines = true
   auto_start_machines = true
@@ -23,7 +27,7 @@ kill_timeout = '5s'
 
 [[services]]
   protocol = 'tcp'
-  internal_port = 8080
+  internal_port = 8081
 
 [[services.ports]]
     port = 80
@@ -33,9 +37,9 @@ kill_timeout = '5s'
     port = 443
     handlers = ['tls', 'http']
 
-[services.concurrency]
-  hard_limit = 25
-  soft_limit = 20
+  [services.concurrency]
+    hard_limit = 25
+    soft_limit = 20
 
 [[services.tcp_checks]]
     interval = '15s'
@@ -45,8 +49,4 @@ kill_timeout = '5s'
 [[vm]]
   cpu_kind = 'shared'
   cpus = 1
-  memory_mb = 256
-
-[mounts]
-  source = "litefs"
-  destination = "/var/lib/litefs"
+  memory_mb = 512
