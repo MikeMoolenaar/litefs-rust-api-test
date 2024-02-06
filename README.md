@@ -2,8 +2,8 @@
 Testing out [LiteFS on fly.io](https://fly.io/docs/litefs/).
 
 ## Setup
+Based on [litefs setup guide](https://fly.io/docs/litefs/getting-started-fly/)
 ```sh
-based on [litefs setup guide](https://fly.io/docs/litefs/getting-started-fly/)
 sudo fly launch --local-only --build-only
 fly volumes create litefs --size 1
 fly consul attach
