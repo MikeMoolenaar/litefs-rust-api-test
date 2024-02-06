@@ -1,6 +1,5 @@
-# litefs-rust-api-test (WIP)
-Doesn't work yet lol 
-
+# litefs-rust-api-test 
+Testing out [LiteFS on fly.io](https://fly.io/docs/litefs/).
 
 ## Setup
 ```sh
@@ -16,3 +15,6 @@ Accessing the db:
 fly ssh console
 sqlite3 /litefs/db
 ```
+
+## TODO
+- Figure out how to run `sqlx database setup` outside of the build container. Currently, the rust compiler makes the docker package huge (total size is now 1.1GB)
