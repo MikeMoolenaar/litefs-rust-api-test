@@ -58,6 +58,10 @@ async fn main() {
     let db_pool = SqlitePool::connect(&db_url)
         .await
         .expect("Database should connect");
+    sqlx::migrate!("./migrations")
+        .run(&db_pool.clone())
+        .await
+        .unwrap();
     let _ = SHARED_DB_POOL.set(db_pool);
 
     // Setup templating

@@ -32,8 +32,6 @@ proxy:
 # the last command to be long-running (e.g. an application server). When the
 # last command exits, LiteFS is shut down.
 exec:
-  - cmd: "cargo sqlx database setup"
-    if-candidate: true
   - cmd: "litefs-rust-api-test"
 
 # The lease section specifies how the cluster will be managed. We're using the

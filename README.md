@@ -20,5 +20,3 @@ fly ssh console
 sqlite3 /litefs/db
 ```
 
-## TODO
-- Figure out how to run `sqlx database setup` outside of the build container. Currently, the rust compiler makes the docker package huge (total size is now 1.1GB)
