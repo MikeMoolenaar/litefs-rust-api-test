@@ -1,5 +1,5 @@
 # litefs-rust-api-test 
-Testing out [LiteFS on fly.io](https://fly.io/docs/litefs/).
+Testing out [LiteFS on fly.io](https://fly.io/docs/litefs/). App is running at https://litefs-rust-api-test.fly.dev/, it does have automatic scale down so the first request may be somewhat slow.
 
 ## Setup
 Based on [litefs setup guide](https://fly.io/docs/litefs/getting-started-fly/)
